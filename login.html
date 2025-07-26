@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DallolBook</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" class="logo-text" aria-label="DallolBook Home">
+                <i class="fas fa-book-open" aria-hidden="true"></i> DallolBook
+            </a>
+        </div>
+
+        <nav class="nav-menu" aria-label="Main navigation">
+            <ul>
+                <li><a href="pages/hotel.html"><i class="fas fa-hotel" aria-hidden="true"></i> Hotels</a></li>
+                <li><a href="pages/bus.html"><i class="fas fa-bus" aria-hidden="true"></i> Bus</a></li>
+                <li><a href="pages/cab.html"><i class="fas fa-taxi" aria-hidden="true"></i> Cab</a></li>
+                <li><a href="pages/flight.html"><i class="fas fa-plane" aria-hidden="true"></i> Flights</a></li>
+                <li><a href="pages/tour.html"><i class="fas fa-umbrella-beach" aria-hidden="true"></i> Tours</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <a href="signup.html" class="signup-btn" aria-label="Sign up">Sign Up</a>
+        </div>
+    </header>
+
+    <main class="login-container">
+        <div class="login-card">
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Log in to continue your travel journey with DallolBook</p>
+            
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                </div>
+                
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="login-btn">Log In</button>
+                
+                <div class="divider">
+                    <span>or</span>
+                </div>
+                
+                <div class="social-login">
+                    <button type="button" class="social-btn google">
+                        <i class="fab fa-google"></i> Continue with Google
+                    </button>
+                    <button type="button" class="social-btn facebook">
+                        <i class="fab fa-facebook-f"></i> Continue with Facebook
+                    </button>
+                </div>
+                
+                <p class="signup-link">Don't have an account? <a href="signup.html">Sign up</a></p>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <i class="fas fa-book-open"></i> DallolBook
+                </div>
+                <p>Your trusted partner for unforgettable travel experiences. We specialize in comfortable flights, cozy hotels, and amazing tours.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Bole Medhanialem, Addis Ababa</p>
+                <p><i class="fas fa-phone"></i> +251 123 456 789</p>
+                <p><i class="fas fa-envelope"></i> info@dallolbook.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 DallolBook. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
