@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cab Booking - DallolBook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/cab.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html" class="logo-text" aria-label="DallolBook Home">
+                <i class="fas fa-book-open" aria-hidden="true"></i> DallolBook
+            </a>
+        </div>
+
+        <nav class="nav-menu" aria-label="Main navigation">
+            <ul>
+                <li><a href="../pages/hotel.html"><i class="fas fa-hotel"></i> Hotels</a></li>
+                <li><a href="../pages/bus.html"><i class="fas fa-bus"></i> Bus</a></li>
+                <li><a href="../pages/cab.html" class="active"><i class="fas fa-taxi"></i> Cab</a></li>
+                <li><a href="../pages/flight.html"><i class="fas fa-plane"></i> Flights</a></li>
+                <li><a href="../pages/tour.html"><i class="fas fa-umbrella-beach"></i> Tours</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <a href="../signup.html" class="sign-up" aria-label="Sign up">Sign Up</a>
+        </div>
+    </header>
+
+    <main class="cab-booking">
+        <section class="cab-hero">
+            <div class="hero-content">
+                <h1>Book a Cab in Minutes</h1>
+                <p>Safe, reliable, and affordable rides across the city</p>
+            </div>
+        </section>
+
+        <section class="cab-search">
+            <div class="search-container">
+                <form class="search-form">
+                    <div class="form-group">
+                        <label for="pickup"><i class="fas fa-map-marker-alt"></i> Pickup Location</label>
+                        <input type="text" id="pickup" placeholder="Enter pickup address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dropoff"><i class="fas fa-flag-checkered"></i> Dropoff Location</label>
+                        <input type="text" id="dropoff" placeholder="Enter destination" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pickup-time"><i class="fas fa-clock"></i> Pickup Time</label>
+                        <div class="time-options">
+                            <button type="button" class="time-option active" data-time="now">Now</button>
+                            <button type="button" class="time-option" data-time="later">Later</button>
+                            <input type="datetime-local" id="pickup-time" class="hidden">
+                        </div>
+                    </div>
+                    <button type="submit" class="search-btn">Find Cabs</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="cab-types">
+            <h2>Our Vehicle Options</h2>
+            <div class="type-grid">
+                <div class="type-card" data-type="standard">
+                    <div class="type-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Standard</h3>
+                    <p>Comfortable rides for up to 4 passengers</p>
+                    <div class="type-price">$0.50/km</div>
+                </div>
+                <div class="type-card" data-type="premium">
+                    <div class="type-icon">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h3>Premium</h3>
+                    <p>Luxury vehicles for business or special occasions</p>
+                    <div class="type-price">$0.80/km</div>
+                </div>
+                <div class="type-card" data-type="xl">
+                    <div class="type-icon">
+                        <i class="fas fa-van-shuttle"></i>
+                    </div>
+                    <h3>XL</h3>
+                    <p>Spacious vehicles for groups up to 6 people</p>
+                    <div class="type-price">$0.70/km</div>
+                </div>
+                <div class="type-card" data-type="suv">
+                    <div class="type-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>SUV</h3>
+                    <p>Large vehicles with extra luggage space</p>
+                    <div class="type-price">$0.75/km</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="available-cabs hidden">
+            <h2>Available Cabs Near You</h2>
+            <div class="cab-grid" id="cab-results">
+                <!-- Cab results will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <section class="cab-details hidden">
+            <div class="details-container">
+                <div class="driver-info">
+                    <h3>Your Driver</h3>
+                    <div class="driver-card">
+                        <img src="../images/driver-1.jpg" alt="Driver photo" class="driver-photo">
+                        <div class="driver-details">
+                            <h4>Michael Abebe</h4>
+                            <div class="driver-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.7 (256 rides)</span>
+                            </div>
+                            <div class="driver-vehicle">
+                                <i class="fas fa-car"></i> Toyota Corolla (Blue) • A7890
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="trip-info">
+                    <h3>Trip Details</h3>
+                    <div class="trip-details">
+                        <div class="trip-route">
+                            <div class="route-point pickup">
+                                <div class="point-marker"></div>
+                                <div class="point-details">
+                                    <div class="point-time">Now</div>
+                                    <div class="point-address" id="pickup-address">Bole Medhanialem, Addis Ababa</div>
+                                </div>
+                            </div>
+                            <div class="route-line"></div>
+                            <div class="route-point dropoff">
+                                <div class="point-marker"></div>
+                                <div class="point-details">
+                                    <div class="point-time">~15 min</div>
+                                    <div class="point-address" id="dropoff-address">Mexico Square, Addis Ababa</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trip-summary">
+                            <div class="summary-item">
+                                <span>Distance</span>
+                                <span>8.5 km</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Duration</span>
+                                <span>~15 min</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Vehicle</span>
+                                <span>Standard</span>
+                            </div>
+                            <div class="summary-item total">
+                                <span>Total</span>
+                                <span>$4.25</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-methods">
+                    <h3>Payment Method</h3>
+                    <div class="payment-options">
+                        <div class="payment-option active" data-method="cash">
+                            <i class="fas fa-money-bill-wave"></i> Cash
+                        </div>
+                        <div class="payment-option" data-method="card">
+                            <i class="fas fa-credit-card"></i> Card
+                        </div>
+                        <div class="payment-option" data-method="telebirr">
+                            <i class="fas fa-mobile-alt"></i> Telebirr
+                        </div>
+                    </div>
+                    <div class="card-details hidden">
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                        </div>
+                        <div class="form-group">
+                            <label for="card-expiry">Expiry Date</label>
+                            <input type="text" id="card-expiry" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group">
+                            <label for="card-cvv">CVV</label>
+                            <input type="text" id="card-cvv" placeholder="123">
+                        </div>
+                    </div>
+                    <button class="confirm-booking-btn">Confirm Booking</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking-confirmed hidden">
+            <div class="confirmation-content">
+                <i class="fas fa-check-circle"></i>
+                <h2>Your Cab is Booked!</h2>
+                <p>Your driver will arrive shortly. You can track the vehicle in real-time.</p>
+                <div class="booking-details">
+                    <div class="detail-item">
+                        <span>Driver:</span>
+                        <span>Michael Abebe</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Vehicle:</span>
+                        <span>Toyota Corolla (Blue) • A7890</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Pickup:</span>
+                        <span id="confirmed-pickup">Bole Medhanialem, Addis Ababa</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Dropoff:</span>
+                        <span id="confirmed-dropoff">Mexico Square, Addis Ababa</span>
+                    </div>
+                    <div class="detail-item">
+                        <span>Estimated Fare:</span>
+                        <span>$4.25</span>
+                    </div>
+                </div>
+                <div class="confirmation-actions">
+                    <button class="track-driver-btn"><i class="fas fa-map-marker-alt"></i> Track Driver</button>
+                    <a href="../index.html" class="home-btn">Back to Home</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-choose-us">
+            <h2>Why Choose DallolBook Cabs?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safe Rides</h3>
+                    <p>All drivers are verified and vehicles regularly inspected for your safety.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Quick Pickup</h3>
+                    <p>Average wait time of just 5 minutes in most areas of the city.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Affordable Rates</h3>
+                    <p>Competitive pricing with no surge charges during peak hours.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our customer service team is always available to assist you.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <i class="fas fa-book-open"></i> DallolBook
+                </div>
+                <p>Your trusted partner for unforgettable travel experiences. We specialize in comfortable flights, cozy hotels, and amazing tours.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="../about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="../services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="../contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Bole Medhanialem, Addis Ababa</p>
+                <p><i class="fas fa-phone"></i> +251 123 456 789</p>
+                <p><i class="fas fa-envelope"></i> info@dallolbook.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 DallolBook. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/cab.js"></script>
+</body>
+</html>

@@ -1,0 +1,742 @@
+/* General Styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #7f8c8d;
+    --white: #fff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Header and Footer styles are inherited from index.css */
+
+/* Cab Hero Section */
+.cab-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/cab-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.cab-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.cab-hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Cab Search Section */
+.cab-search {
+    background-color: var(--white);
+    padding: 2rem;
+    margin-top: -3rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.search-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.time-options {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.time-option {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    background-color: var(--white);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.time-option.active {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border-color: var(--secondary-color);
+}
+
+#pickup-time {
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.search-btn {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+.search-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Cab Types Section */
+.cab-types {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cab-types h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.cab-types h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.type-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.type-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--secondary-color);
+}
+
+.type-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--light-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.type-card:hover .type-icon {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.type-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.type-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.type-price {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+/* Available Cabs Section */
+.available-cabs {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.available-cabs h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.cab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.cab-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.cab-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cab-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.cab-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.cab-card:hover .cab-image img {
+    transform: scale(1.05);
+}
+
+.cab-content {
+    padding: 1.5rem;
+}
+
+.cab-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.cab-driver {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.driver-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.driver-name {
+    font-weight: 600;
+}
+
+.cab-rating {
+    color: #f1c40f;
+    font-size: 0.9rem;
+}
+
+.cab-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.cab-price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.cab-btn {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    width: 100%;
+    transition: var(--transition);
+}
+
+.cab-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Cab Details Section */
+.cab-details {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.details-container {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+
+.driver-info h3, .trip-info h3, .payment-methods h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.driver-info h3::after, .trip-info h3::after, .payment-methods h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.driver-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.driver-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--secondary-color);
+}
+
+.driver-details h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.driver-rating {
+    color: #f1c40f;
+    margin-bottom: 0.5rem;
+}
+
+.driver-rating span {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+.driver-vehicle {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.trip-route {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.route-point {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.pickup .point-marker {
+    background-color: var(--secondary-color);
+}
+
+.dropoff .point-marker {
+    background-color: var(--accent-color);
+}
+
+.point-marker {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.route-line {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background-color: #ddd;
+}
+
+.point-time {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.point-address {
+    color: var(--text-light);
+}
+
+.trip-summary {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-item.total {
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.payment-options {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.payment-option {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.payment-option.active {
+    border-color: var(--secondary-color);
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.card-details {
+    margin-bottom: 1.5rem;
+}
+
+.confirm-booking-btn {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 100%;
+    transition: var(--transition);
+}
+
+.confirm-booking-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Booking Confirmed Section */
+.booking-confirmed {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.confirmation-content {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 3rem 2rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.confirmation-content i {
+    font-size: 5rem;
+    color: #2ecc71;
+    margin-bottom: 1.5rem;
+}
+
+.confirmation-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.confirmation-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.booking-details {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.confirmation-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.track-driver-btn {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.track-driver-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.home-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.home-btn:hover {
+    background-color: #1a252f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.why-choose-us h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.why-choose-us h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--light-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.feature-card:hover .feature-icon {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.feature-card p {
+    color: var(--text-light);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .details-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .cab-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .cab-hero p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .cab-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .payment-options {
+        flex-direction: column;
+    }
+    
+    .confirmation-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .cab-hero {
+        padding: 4rem 1rem;
+    }
+    
+    .cab-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .type-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .confirmation-actions button, .confirmation-actions a {
+        width: 100%;
+    }
+}

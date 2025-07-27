@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFOY-Bus Booking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/bus.css">
+</head>
+
+<body>
+      <header class="header">
+        <div class="logo">
+            <a href="../index.html" class="logo-text" aria-label="DallolBook Home">
+                <i class="fas fa-book-open" aria-hidden="true"></i> DallolBook
+            </a>
+        </div>
+
+        <nav class="nav-menu" aria-label="Main navigation">
+            <ul>
+                <li><a href="../pages/hotel.html"><i class="fas fa-hotel"></i> Hotels</a></li>
+                <li><a href="../pages/bus.html"><i class="fas fa-bus"></i> Bus</a></li>
+                <li><a href="../pages/cab.html"><i class="fas fa-taxi"></i> Cab</a></li>
+                <li><a href="../pages/flight.html" class="active"><i class="fas fa-plane"></i> Flights</a></li>
+                <li><a href="../pages/tour.html"><i class="fas fa-umbrella-beach"></i> Tours</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <a href="../signup.html" class="sign-up" aria-label="Sign up">Sign Up</a>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Your Extraordinary Journey Begins Here</h1>
+    <p class="hero-subtitle">Where every journey feels as good as the destination</p>
+    <button class="cta-button" id="openSeatModal">
+      <span>Book Your Seat</span>
+      <svg class="cta-icon" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </button>
+  </div>
+</section>
+
+    <!-- Popular Routes -->
+    <section class="routes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Routes</h2>
+                <p>Discover our most traveled destinations</p>
+            </div>
+            <div class="routes-grid">
+                <div class="route-card">
+                    <div class="route-image" style="background-image: url('../images/bus/harar.webp');"></div>
+                    <div class="route-details">
+                        <h3>Addis Ababa to Harar</h3>
+                        <div class="route-meta">
+                            <span><i class="fas fa-clock"></i> 4h 30m</span>
+                            <span><i class="fas fa-bus"></i> 5 daily trips</span>
+                        </div>
+                        <div class="route-price">250 birr</div>
+                        <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Book Now</a>
+                    </div>
+                </div>
+                <div class="route-card">
+                    <div class="route-image" style="background-image: url('../images/bus/meqele.webp');"></div>
+                    <div class="route-details">
+                        <h3>Addis Ababa to Meqele</h3>
+                        <div class="route-meta">
+                            <span><i class="fas fa-clock"></i> 5h 15m</span>
+                            <span><i class="fas fa-bus"></i> 3 daily trips</span>
+                        </div>
+                        <div class="route-price">450 birr</div>
+                        <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Book Now</a>
+                    </div>
+                </div>
+                <div class="route-card">
+                    <div class="route-image" style="background-image: url('../images/bus/Addis Ababa City.jpg');"></div>
+                    <div class="route-details">
+                        <h3>Harar to Addis Ababa</h3>
+                        <div class="route-meta">
+                            <span><i class="fas fa-clock"></i> 8h 30m</span>
+                            <span><i class="fas fa-bus"></i> 2 daily trips</span>
+                        </div>
+                        <div class="route-price">650 birr</div>
+                        <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Customers Say</h2>
+                <p>Hear from travelers who've experienced our service</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The most comfortable bus journey I've ever had. The seats were spacious and the WiFi was fast enough for me to work during the trip."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EA</div>
+                        <div>
+                            <h4>Elham Abdu</h4>
+                            <span>Business Traveler</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "I travel with EFOY every month to visit my family. Always on time, clean buses, and friendly drivers. Highly recommend!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">KN</div>
+                        <div>
+                            <h4>Kewser Nuredin</h4>
+                            <span>Frequent Traveler</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The booking process was so easy and the app notified me when the bus was arriving. Made my first solo trip stress-free!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ZK</div>
+                        <div>
+                            <h4>Zahra Kedir</h4>
+                            <span>Student</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <i class="fas fa-book-open"></i> DallolBook
+                </div>
+                <p>Your trusted partner for unforgettable travel experiences. We specialize in comfortable flights, cozy hotels, and amazing tours.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="../about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="../services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href=".../contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Bole Medhanialem, Addis Ababa</p>
+                <p><i class="fas fa-phone"></i> +251 123 456 789</p>
+                <p><i class="fas fa-envelope"></i> info@dallolbook.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 DallolBook. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+    <!-- Modal Structure -->
+<div id="routeModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <iframe src="route.html" frameborder="0" style="width:100%; height:80vh;"></iframe>
+  </div>
+</div>
+
+<div id="routeModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <iframe src="route.html" frameborder="0" style="width:100%; height:80vh;"></iframe>
+  </div>
+</div>
+
+<script src="../js/bus.js"></script>
+
+
+</body>
+</html>
