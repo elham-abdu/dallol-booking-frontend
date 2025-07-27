@@ -14,7 +14,7 @@
 <body>
     <header class="header">
         <div class="logo">
-            <a href="./index.html" class="logo-text" aria-label="DallolBook Home">
+            <a href="../index.html" class="logo-text" aria-label="DallolBook Home">
                 <i class="fas fa-book-open" aria-hidden="true"></i> DallolBook
             </a>
         </div>
@@ -26,11 +26,12 @@
                 <li><a href="../pages/cab.html"><i class="fas fa-taxi" aria-hidden="true"></i> Cab</a></li>
                 <li><a href="../pages/flight.html" class="active"><i class="fas fa-plane" aria-hidden="true"></i> Flights</a></li>
                 <li><a href="../pages/tour.html"><i class="fas fa-umbrella-beach" aria-hidden="true"></i> Tours</a></li>
+                <li><a href="../pages/my-bookings.html"><i class="fas fa-suitcase" aria-hidden="true"></i> My Bookings</a></li>
             </ul>
         </nav>
 
         <div class="auth-buttons">
-            <a href="../login.html" class="login-btn" aria-label="Log in">=Log in</a>
+            <a href="../login.html" class="login-btn" aria-label="Log in">Log in</a>
         </div>
     </header>
 
@@ -39,18 +40,19 @@
             <div class="form-tabs">
                 <button class="tab-btn active" data-tab="one-way">One Way</button>
                 <button class="tab-btn" data-tab="round-trip">Round Trip</button>
-                <button class="tab-btn" data-tab="multi-city">Multi City</button>
             </div>
 
             <form class="booking-form" id="flight-form">
                 <div class="form-group">
                     <label for="from"><i class="fas fa-plane-departure"></i> From</label>
                     <input type="text" id="from" placeholder="City or Airport" required>
+                    <div class="suggestions" id="from-suggestions"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="to"><i class="fas fa-plane-arrival"></i> To</label>
                     <input type="text" id="to" placeholder="City or Airport" required>
+                    <div class="suggestions" id="to-suggestions"></div>
                 </div>
 
                 <div class="form-group">
@@ -58,20 +60,18 @@
                     <input type="date" id="departure" required>
                 </div>
 
-                <div class="form-group" id="return-date-group">
+                <div class="form-group" id="return-date-group" style="display:none;">
                     <label for="return"><i class="far fa-calendar-alt"></i> Return</label>
                     <input type="date" id="return">
                 </div>
 
                 <div class="form-group">
                     <label for="passengers"><i class="fas fa-users"></i> Passengers</label>
-                    <select id="passengers">
-                        <option value="1">1 Adult</option>
-                        <option value="2">2 Adults</option>
-                        <option value="3">3 Adults</option>
-                        <option value="4">4 Adults</option>
-                        <option value="family">Family</option>
-                    </select>
+                    <div class="passenger-selector">
+                        <button type="button" class="passenger-btn" id="decrease-passengers">-</button>
+                        <input type="number" id="passengers" min="1" max="9" value="1" readonly>
+                        <button type="button" class="passenger-btn" id="increase-passengers">+</button>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -124,13 +124,12 @@
                 </div>
 
                 <div class="flight-list" id="flight-list">
-                    <!-- Flight results will be populated here by JavaScript -->
                     <div class="no-flights">Search for flights to see results</div>
                 </div>
             </div>
         </div>
     </main>
-
+        <!-- Your footer content here -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-about">
@@ -162,6 +161,7 @@
             <p>&copy; 2025 DallolBook. All rights reserved.</p>
         </div>
     </footer>
+
 
     <script src="../js/flight.js"></script>
 </body>

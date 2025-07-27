@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - DallolBook</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="../css/my-bookings.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html" class="logo-text" aria-label="DallolBook Home">
+                <i class="fas fa-book-open" aria-hidden="true"></i> DallolBook
+            </a>
+        </div>
+
+        <nav class="nav-menu" aria-label="Main navigation">
+            <ul>
+                <li><a href="../pages/hotel.html"><i class="fas fa-hotel" aria-hidden="true"></i> Hotels</a></li>
+                <li><a href="../pages/bus.html"><i class="fas fa-bus" aria-hidden="true"></i> Bus</a></li>
+                <li><a href="../pages/cab.html"><i class="fas fa-taxi" aria-hidden="true"></i> Cab</a></li>
+                <li><a href="../pages/flight.html"><i class="fas fa-plane" aria-hidden="true"></i> Flights</a></li>
+                <li><a href="../pages/tour.html"><i class="fas fa-umbrella-beach" aria-hidden="true"></i> Tours</a></li>
+                <li><a href="../pages/my-bookings.html" class="active"><i class="fas fa-suitcase" aria-hidden="true"></i> My Bookings</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <a href="../login.html" class="login-btn" aria-label="Log in">Log in</a>
+        </div>
+    </header>
+
+    <main class="bookings-container">
+        <h1>My Bookings</h1>
+        
+        <div class="bookings-tabs">
+            <button class="tab-btn active" data-tab="upcoming" aria-selected="true">Upcoming</button>
+            <button class="tab-btn" data-tab="past" aria-selected="false">Past</button>
+            <button class="tab-btn" data-tab="cancelled" aria-selected="false">Cancelled</button>
+        </div>
+        
+        <div class="bookings-list" id="bookings-list" aria-live="polite">
+            <!-- Bookings will be loaded here -->
+            <div class="no-bookings">
+                <i class="fas fa-suitcase-rolling"></i>
+                <p>You don't have any upcoming bookings yet</p>
+                <a href="../pages/flight.html" class="search-flights-btn">Search Flights</a>
+            </div>
+        </div>
+
+        <!-- Booking Details Modal -->
+        <div id="bookingModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
+            <div class="modal-content">
+                <span class="close-modal" aria-label="Close modal">&times;</span>
+                <h2 id="bookingModalTitle">Booking Details</h2>
+                <div id="bookingModalContent"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <i class="fas fa-book-open"></i> DallolBook
+                </div>
+                <p>Your trusted partner for unforgettable travel experiences. We specialize in comfortable flights, cozy hotels, and amazing tours.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="../about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="../services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="../contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Bole Medhanialem, Addis Ababa</p>
+                <p><i class="fas fa-phone"></i> +251 123 456 789</p>
+                <p><i class="fas fa-envelope"></i> info@dallolbook.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 DallolBook. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/my-bookings.js"></script>
+</body>
+</html>
