@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight Booking - DallolBook</title>
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Your CSS -->
     <link rel="stylesheet" href="../css/flight.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
     <header class="header">
@@ -21,116 +19,180 @@
 
         <nav class="nav-menu" aria-label="Main navigation">
             <ul>
-                <li><a href="../pages/hotel.html"><i class="fas fa-hotel" aria-hidden="true"></i> Hotels</a></li>
-                <li><a href="../pages/bus.html"><i class="fas fa-bus" aria-hidden="true"></i> Bus</a></li>
-                <li><a href="../pages/cab.html"><i class="fas fa-taxi" aria-hidden="true"></i> Cab</a></li>
-                <li><a href="../pages/flight.html" class="active"><i class="fas fa-plane" aria-hidden="true"></i> Flights</a></li>
-                <li><a href="../pages/tour.html"><i class="fas fa-umbrella-beach" aria-hidden="true"></i> Tours</a></li>
-                <li><a href="../pages/my-bookings.html"><i class="fas fa-suitcase" aria-hidden="true"></i> My Bookings</a></li>
+                <li><a href="../pages/hotel.html"><i class="fas fa-hotel"></i> Hotels</a></li>
+                <li><a href="../pages/bus.html"><i class="fas fa-bus"></i> Bus</a></li>
+                <li><a href="../pages/cab.html"><i class="fas fa-taxi"></i> Cab</a></li>
+                <li><a href="../pages/flight.html" class="active"><i class="fas fa-plane"></i> Flights</a></li>
+                <li><a href="../pages/tour.html"><i class="fas fa-umbrella-beach"></i> Tours</a></li>
+                <li><a href="../pages/my-bookings.html"><i class="fas fa-umbrella-beach"></i> My-Bookings</a></li>
             </ul>
         </nav>
 
         <div class="auth-buttons">
-            <a href="../login.html" class="login-btn" aria-label="Log in">Log in</a>
+            <a href="../signup.html" class="sign-up" aria-label="Sign up">Sign Up</a>
         </div>
     </header>
 
-    <main class="flight-booking-container">
-        <div class="booking-form-container">
-            <div class="form-tabs">
-                <button class="tab-btn active" data-tab="one-way">One Way</button>
-                <button class="tab-btn" data-tab="round-trip">Round Trip</button>
+    <main class="flight-booking">
+        <section class="flight-search">
+            <div class="search-container">
+                <h1>Find Your Perfect Flight</h1>
+                <form class="search-form">
+                    <div class="form-group">
+                        <label for="from">From</label>
+                        <input type="text" id="from" placeholder="City or Airport" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="to">To</label>
+                        <input type="text" id="to" placeholder="City or Airport" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="departure">Departure</label>
+                        <input type="date" id="departure" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="return">Return (Optional)</label>
+                        <input type="date" id="return">
+                    </div>
+                    <div class="form-group">
+                        <label for="passengers">Passengers</label>
+                        <select id="passengers">
+                            <option value="1">1 Adult</option>
+                            <option value="2">2 Adults</option>
+                            <option value="3">3 Adults</option>
+                            <option value="4">4 Adults</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="search-btn">Search Flights</button>
+                </form>
             </div>
+        </section>
 
-            <form class="booking-form" id="flight-form">
-                <div class="form-group">
-                    <label for="from"><i class="fas fa-plane-departure"></i> From</label>
-                    <input type="text" id="from" placeholder="City or Airport" required>
-                    <div class="suggestions" id="from-suggestions"></div>
+        <section class="flight-results">
+            <h2>Available Flights</h2>
+            <div class="flight-cards">
+                <!-- Flight cards will be dynamically inserted here by JavaScript -->
+            </div>
+        </section>
+
+        <section class="seat-selection hidden">
+            <h2>Select Your Seats</h2>
+            <div class="airplane">
+                <div class="cockpit">
+                    <h3>Cockpit</h3>
                 </div>
-
-                <div class="form-group">
-                    <label for="to"><i class="fas fa-plane-arrival"></i> To</label>
-                    <input type="text" id="to" placeholder="City or Airport" required>
-                    <div class="suggestions" id="to-suggestions"></div>
+                <div class="first-class">
+                    <h4>First Class</h4>
+                    <div class="seats" id="first-class"></div>
                 </div>
-
-                <div class="form-group">
-                    <label for="departure"><i class="far fa-calendar-alt"></i> Departure</label>
-                    <input type="date" id="departure" required>
+                <div class="business-class">
+                    <h4>Business Class</h4>
+                    <div class="seats" id="business-class"></div>
                 </div>
-
-                <div class="form-group" id="return-date-group" style="display:none;">
-                    <label for="return"><i class="far fa-calendar-alt"></i> Return</label>
-                    <input type="date" id="return">
+                <div class="economy-class">
+                    <h4>Economy Class</h4>
+                    <div class="seats" id="economy-class"></div>
                 </div>
+                <div class="exit-row">
+                    <div class="seats" id="exit-row"></div>
+                </div>
+            </div>
+            <div class="seat-legend">
+                <div class="legend-item">
+                    <div class="seat available"></div>
+                    <span>Available</span>
+                </div>
+                <div class="legend-item">
+                    <div class="seat selected"></div>
+                    <span>Selected</span>
+                </div>
+                <div class="legend-item">
+                    <div class="seat booked"></div>
+                    <span>Booked</span>
+                </div>
+            </div>
+            <button class="confirm-seats-btn">Confirm Seats</button>
+        </section>
 
-                <div class="form-group">
-                    <label for="passengers"><i class="fas fa-users"></i> Passengers</label>
-                    <div class="passenger-selector">
-                        <button type="button" class="passenger-btn" id="decrease-passengers">-</button>
-                        <input type="number" id="passengers" min="1" max="9" value="1" readonly>
-                        <button type="button" class="passenger-btn" id="increase-passengers">+</button>
+        <section class="booking-summary hidden">
+            <h2>Booking Summary</h2>
+            <div class="summary-content">
+                <div class="flight-info">
+                    <h3>Flight Details</h3>
+                    <!-- Flight details will be inserted here -->
+                </div>
+                <div class="passenger-info">
+                    <h3>Passenger Information</h3>
+                    <form class="passenger-form">
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="payment-info">
+                    <h3>Payment</h3>
+                    <div class="payment-options">
+                        <div class="payment-method active" data-method="credit">
+                            <i class="fas fa-credit-card"></i> Credit Card
+                        </div>
+                        <div class="payment-method" data-method="paypal">
+                            <i class="fab fa-paypal"></i> PayPal
+                        </div>
+                    </div>
+                    <form class="credit-card-form">
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-name">Name on Card</label>
+                            <input type="text" id="card-name" required>
+                        </div>
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="expiry">Expiry Date</label>
+                                <input type="text" id="expiry" placeholder="MM/YY" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" placeholder="123" required>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="paypal-form hidden">
+                        <p>You will be redirected to PayPal to complete your payment</p>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="class"><i class="fas fa-business-time"></i> Class</label>
-                    <select id="class">
-                        <option value="economy">Economy</option>
-                        <option value="premium">Premium Economy</option>
-                        <option value="business">Business</option>
-                        <option value="first">First Class</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="search-btn">
-                    <i class="fas fa-search"></i> Search Flights
-                </button>
-            </form>
-        </div>
-
-        <div class="flight-results-container">
-            <div class="filter-section">
-                <h3>Filters</h3>
-                <div class="filter-group">
-                    <h4>Stops</h4>
-                    <label><input type="checkbox" name="stops" value="0" checked> Non-stop</label>
-                    <label><input type="checkbox" name="stops" value="1" checked> 1 Stop</label>
-                    <label><input type="checkbox" name="stops" value="2"> 2+ Stops</label>
-                </div>
-
-                <div class="filter-group">
-                    <h4>Airlines</h4>
-                    <label><input type="checkbox" name="airline" value="ethiopian" checked> Ethiopian</label>
-                    <label><input type="checkbox" name="airline" value="emirates" checked> Emirates</label>
-                    <label><input type="checkbox" name="airline" value="qatar" checked> Qatar</label>
-                    <label><input type="checkbox" name="airline" value="kenya" checked> Kenya Airways</label>
-                </div>
-
-                <div class="filter-group">
-                    <h4>Price Range</h4>
-                    <input type="range" id="price-range" min="100" max="2000" value="2000">
-                    <div class="price-display">Up to $<span id="price-value">2000</span></div>
-                </div>
             </div>
-
-            <div class="results-section">
-                <div class="sort-options">
-                    <span>Sort by:</span>
-                    <button class="sort-btn active" data-sort="price">Price</button>
-                    <button class="sort-btn" data-sort="duration">Duration</button>
-                    <button class="sort-btn" data-sort="departure">Departure</button>
-                </div>
-
-                <div class="flight-list" id="flight-list">
-                    <div class="no-flights">Search for flights to see results</div>
-                </div>
+            <div class="total-price">
+                <h3>Total: <span id="total-amount">$0.00</span></h3>
+                <button class="book-now-btn">Book Now</button>
             </div>
-        </div>
+        </section>
+
+        <section class="confirmation hidden">
+            <div class="confirmation-content">
+                <i class="fas fa-check-circle"></i>
+                <h2>Booking Confirmed!</h2>
+                <p>Your flight has been successfully booked. A confirmation has been sent to your email.</p>
+                <div class="booking-details">
+                    <!-- Booking details will be inserted here -->
+                </div>
+                <a href="../index.html" class="home-btn">Back to Home</a>
+            </div>
+        </section>
     </main>
-        <!-- Your footer content here -->
-    <footer class="footer">
+
+ <footer class="footer">
         <div class="footer-container">
             <div class="footer-about">
                 <div class="footer-logo">
@@ -145,7 +207,7 @@
                     <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
                     <li><a href="../about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                     <li><a href="../services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
-                    <li><a href=".../contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="../contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                 </ul>
             </div>
             
@@ -161,7 +223,6 @@
             <p>&copy; 2025 DallolBook. All rights reserved.</p>
         </div>
     </footer>
-
 
     <script src="../js/flight.js"></script>
 </body>

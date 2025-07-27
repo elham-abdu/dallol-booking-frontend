@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Search Results - DallolBook</title>
+    <link rel="stylesheet" href="../css/flight.css">
+</head>
+<body>
+    <!-- Same header as flight.html -->
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html" class="logo-text" aria-label="DallolBook Home">
+                <i class="fas fa-book-open"></i> DallolBook
+            </a>
+        </div>
+
+        <nav class="nav-menu" aria-label="Main navigation">
+            <ul>
+                <li><a href="../pages/hotel.html"><i class="fas fa-hotel"></i> Hotels</a></li>
+                <li><a href="../pages/bus.html"><i class="fas fa-bus"></i> Bus</a></li>
+                <li><a href="../pages/cab.html"><i class="fas fa-taxi"></i> Cab</a></li>
+                <li><a href="../pages/flight.html" class="active"><i class="fas fa-plane"></i> Flights</a></li>
+                <li><a href="../pages/tour.html"><i class="fas fa-umbrella-beach"></i> Tours</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <a href="../signup.html" class="sign-up">Sign Up</a>
+        </div>
+    </header>
+
+    <main class="search-results-container">
+        <div class="search-parameters">
+            <h2>Your Search</h2>
+            <div class="search-details">
+                <div>
+                    <span>Addis Ababa (ADD)</span>
+                    <i class="fas fa-arrow-right"></i>
+                    <span>Dubai (DXB)</span>
+                </div>
+                <div>Dec 15, 2023 • 2 Adults • Economy</div>
+            </div>
+        </div>
+
+        <div class="results-container">
+            <aside class="filters-sidebar">
+                <h3>Filter Results</h3>
+                <!-- Filter options here -->
+            </aside>
+
+            <section class="flight-results">
+                <div class="sort-options">
+                    <span>Sort by:</span>
+                    <select id="sortResults">
+                        <option value="price-low">Price (Low to High)</option>
+                        <option value="price-high">Price (High to Low)</option>
+                        <option value="duration">Duration</option>
+                    </select>
+                </div>
+
+                <div class="flight-listings" id="flightResults">
+                    <!-- Flight cards will be inserted here by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="../js/search-flight.js"></script>
+</body>
+</html>

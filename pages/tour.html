@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Packages - DallolBook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/tour.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html" class="logo-text" aria-label="DallolBook Home">
+                <i class="fas fa-book-open" aria-hidden="true"></i> DallolBook
+            </a>
+        </div>
+
+        <nav class="nav-menu" aria-label="Main navigation">
+            <ul>
+                <li><a href="../pages/hotel.html"><i class="fas fa-hotel"></i> Hotels</a></li>
+                <li><a href="../pages/bus.html"><i class="fas fa-bus"></i> Bus</a></li>
+                <li><a href="../pages/cab.html"><i class="fas fa-taxi"></i> Cab</a></li>
+                <li><a href="../pages/flight.html"><i class="fas fa-plane"></i> Flights</a></li>
+                <li><a href="../pages/tour.html" class="active"><i class="fas fa-umbrella-beach"></i> Tours</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <a href="../signup.html" class="sign-up" aria-label="Sign up">Sign Up</a>
+        </div>
+    </header>
+
+    <main class="tour-booking">
+        <section class="tour-hero">
+            <div class="hero-content">
+                <h1>Discover Amazing Tours</h1>
+                <p>Explore the world with our handpicked tour packages</p>
+                <div class="search-tour">
+                    <input type="text" placeholder="Search destinations...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="tour-categories">
+            <h2>Tour Categories</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="adventure">
+                    <div class="category-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Adventure</h3>
+                </div>
+                <div class="category-card" data-category="cultural">
+                    <div class="category-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Cultural</h3>
+                </div>
+                <div class="category-card" data-category="beach">
+                    <div class="category-icon">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <h3>Beach</h3>
+                </div>
+                <div class="category-card" data-category="wildlife">
+                    <div class="category-icon">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <h3>Wildlife</h3>
+                </div>
+                <div class="category-card" data-category="honeymoon">
+                    <div class="category-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Honeymoon</h3>
+                </div>
+                <div class="category-card" data-category="family">
+                    <div class="category-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Family</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-tours">
+            <div class="section-header">
+                <h2>Featured Tours</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="tour-grid" id="featured-tours">
+                <!-- Tours will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <section class="popular-destinations">
+            <div class="section-header">
+                <h2>Popular Destinations</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="destination-grid">
+                <div class="destination-card">
+                    <img src="../images/tour/ሰዋስው _ Nejashi Mosque (ነጃሺ መስጊድ).jpg"Lalibela">
+                    <div class="destination-info">
+                        <h3>Nejashi</h3>
+                        <p>From $899</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="../images/tour/ethiopia ⋆ ࣪_ 🇪🇹📍.jpg" alt="Danakil Depression">
+                    <div class="destination-info">
+                        <h3>Danakil Depression</h3>
+                        <p>From $1,299</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="../images/tour/ethiopia ⋆ ࣪_ 🇪🇹📍 (1).jpg" alt="Simien Mountains">
+                    <div class="destination-info">
+                        <h3>Simien Mountains</h3>
+                        <p>From $1,099</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="../images/tour/Obelisken, Ethiopië.jpg" alt="Axum">
+                    <div class="destination-info">
+                        <h3>Axum</h3>
+                        <p>From $799</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tour-deals">
+            <div class="section-header">
+                <h2>Special Deals</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="deal-slider">
+                <div class="deal-card">
+                    <div class="deal-badge">30% OFF</div>
+                    <img src="../images/tour/ethiopia ⋆ ࣪_ 🇪🇹📍 (1).jpg" alt="Northern Ethiopia Tour">
+                    <div class="deal-content">
+                        <h3>Northern Ethiopia Tour</h3>
+                        <div class="deal-price">
+                            <span class="old-price">$1,499</span>
+                            <span class="new-price">$1,049</span>
+                        </div>
+                        <div class="deal-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 7 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> 4 Cities</span>
+                        </div>
+                        <button class="deal-btn">Book Now</button>
+                    </div>
+                </div>
+                <div class="deal-card">
+                    <div class="deal-badge">Early Bird</div>
+                    <img src="../images/tour/ethiopia.jpg" alt="Danakil Adventure">
+                    <div class="deal-content">
+                        <h3>Danakil Adventure</h3>
+                        <div class="deal-price">
+                            <span class="old-price">$1,799</span>
+                            <span class="new-price">$1,499</span>
+                        </div>
+                        <div class="deal-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 5 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> 3 Sites</span>
+                        </div>
+                        <button class="deal-btn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Travelers Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The cultural tour to Lalibela was absolutely amazing! Our guide was knowledgeable and the accommodations were excellent."</p>
+                    </div>
+                    <div class="testimonial-author">
+
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <span>USA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"The Danakil Depression tour was the adventure of a lifetime. Well organized and worth every penny!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <span>Canada</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest tour deals and travel inspiration straight to your inbox</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <i class="fas fa-book-open"></i> DallolBook
+                </div>
+                <p>Your trusted partner for unforgettable travel experiences. We specialize in comfortable flights, cozy hotels, and amazing tours.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="../about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="../services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="../contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Bole Medhanialem, Addis Ababa</p>
+                <p><i class="fas fa-phone"></i> +251 123 456 789</p>
+                <p><i class="fas fa-envelope"></i> info@dallolbook.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 DallolBook. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/tour.js"></script>
+</body>
+</html>
